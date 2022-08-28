@@ -661,3 +661,35 @@ li.icon-border:not(:last-child) {
   color: #188ce8;
   border-color: #188ce8;
 }
+
+/* form css */
+
+
+
+.form-title {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
+  font-size: 20px;
+  color: #212121;
+  
+}
+
+label {
+  position: absolute;
+
+}
+
+.label-title {
+  margin-bottom: 4px;
+}
+
+input {
+  position: absolute;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  width: 448px;
+  height: 40px;
+  border-radius: 4px;
+}
+

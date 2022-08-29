@@ -542,26 +542,29 @@
      <!-- All you markup, including the modal window -->
      <div class="bg-modal is-hidden" data-modal>
       <div class="modal-content" data-modal-open>
-        <form name="request-form">
+        <form autocomplete="off">
           <h2 class="form-title">Leave your information and we'll call you back</h2> 
-          <label class="contact-name">
+          <label for="user-fullname" class="contact-name">
             <span class="label-title">Name</span>
-            <input type="name" name="name" required/>
+            <input type="text" class="name" id="user-fullname" required/>
           </label >
-          <label class="contact-telephone">
+          <label for="user-phonenumber" class="contact-telephone">
             <span class="label-title">Telephone</span>
-            <input type="telephone" name="telephone" required/>
+            <input type="tel" class="number" id="user-phonenumber" required/>
           </label>
-          <label>
+          <label for="user-email">
             <span class="label-title">Email</span>
-            <input type="email" name="email" required/>
+            <input type="email" class="email" id="user-email" required/>
+          </label>
+          <label for="comment-box">
+            <span class="label-title">Comments</span>
+            <textarea name="text" rows="8" placeholder="Enter the text" id="comment-box"></textarea>
           </label>
           <label>
-            <span class="label-title">Comments</span>
-            <textarea name="comments" rows="8" placeholder="Enter the text"></textarea>
+            <input type="checkbox" class="terms-and-conditions" value="accept" required/>
+            <span class="checkbox-label">I agree with the newsletter and accept the Terms and Conditions</span>
           </label>
-
-          <button type="submit">Submit</button>
+          <button type="submit" class="form-button">Send</button>
         </form>
         <button type="button" class="closing-modal-button" data-modal-close>
           <svg class="icon icon-Vector-1-1" width="11" height="11">

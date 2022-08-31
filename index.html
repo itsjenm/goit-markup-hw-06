@@ -536,35 +536,52 @@
           </li>
           </ul>
         </div>
+        <div class="footer-newsletter">
+          <h3 class="social-title">SUBSCRIBE TO THE NEWSLETTER</h3>
+          <input type="email" placeholder="E-mail" class="email-input"/>
+          <button type="button" class="email-subscription-btn">Subscribe</button>
+          <svg class="newsletter__icon" width="24px" height="24px">
+            <use href="images/icons.svg#icon-icon-send-1"></use>
+          </svg>
+        </div>
       </div>
     </footer>
 
      <!-- All you markup, including the modal window -->
      <div class="bg-modal is-hidden" data-modal>
       <div class="modal-content" data-modal-open>
-        <form autocomplete="off">
+        <form class="request-form" autocomplete="off">
           <h2 class="form-title">Leave your information and we'll call you back</h2> 
-          <label for="user-fullname" class="contact-name">
-            <span class="label-title">Name</span>
-            <input type="text" class="name" id="user-fullname" required/>
+          <label for="user-fullname" class="request-form__label">
+            <span class="request-form__title">Name</span>
+            <svg class="request-form__icon" width="12px" height="12px">
+              <use href="images/icons.svg#icon-Vector-2-1"></use>
+            </svg>
+            <input type="text" class="request-form__name" id="user-fullname" required/>
           </label >
-          <label for="user-phonenumber" class="contact-telephone">
-            <span class="label-title">Telephone</span>
-            <input type="tel" class="number" id="user-phonenumber" required/>
+          <label for="user-phone-number" class="request-form__label">
+            <span class="request-form__title">Telephone</span>
+            <svg class="request-form__icon" width="12px" height="12px">
+              <use href="images/icons.svg#icon-Vector-3-1"></use>
+            </svg>
+            <input type="tel" class="request-form__phone" id="user-phone-number" required/>
           </label>
-          <label for="user-email">
-            <span class="label-title">Email</span>
-            <input type="email" class="email" id="user-email" required/>
+          <label for="user-email" class="request-form__label">
+            <span class="request-form__title">Email</span>
+            <svg class="request-form__icon" width="12px" height="12px">
+              <use href="images/icons.svg#icon-Vector-4-1"></use>
+            </svg>
+            <input type="email" class="request-form__email" id="user-email" required/>
           </label>
-          <label for="comment-box">
-            <span class="label-title">Comments</span>
-            <textarea name="text" rows="8" placeholder="Enter the text" id="comment-box"></textarea>
+          <label for="comment-box" class="request-form__label">
+            <span class="request-form__title">Comments</span>
+            <textarea class="request-form__text-box" name="text" rows="8" placeholder="Enter the text" id="comment-box"></textarea>
           </label>
-          <label>
-            <input type="checkbox" class="terms-and-conditions" value="accept" required/>
-            <span class="checkbox-label">I agree with the newsletter and accept the Terms and Conditions</span>
+          <label class="request-form__checkbox-label">
+            <input type="checkbox" class="request-form__checkbox" value="accept" required/>
+            <span class="request-form__terms">I agree with the newsletter and accept the Terms and Conditions</span>
           </label>
-          <button type="submit" class="form-button">Send</button>
+          <button type="button" class="request-form__button">Send</button>
         </form>
         <button type="button" class="closing-modal-button" data-modal-close>
           <svg class="icon icon-Vector-1-1" width="11" height="11">

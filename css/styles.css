@@ -596,9 +596,53 @@ li.icon-border:not(:last-child) {
   color: rgba(255, 255, 255, 1);
 }
 
-.footer-social-icons {
+.footer-social-icons,
+.footer-newsletter {
   margin-left: 70px;
 }
+
+.email-input {
+  width: 358px;
+  height: 50px;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background-color: rgba(47, 48, 58, 1);
+  padding: 16px;
+  color: #ffffff;
+
+}
+
+.email-subscription-btn {
+  width: 200px;
+  height: 50px;
+  margin-left: 12px;
+  border-radius: 4px;
+  background-color: rgba(33, 150, 243, 1);
+  border-style: none;
+  font-weight: 700;
+  font-size: 16px;
+  color: #ffffff;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.email-subscription-btn:hover,
+.email-subscription-btn:focus {
+  background-color: #188ce8;
+}
+
+.footer-newsletter {
+  display: block;
+  position: relative;
+}
+
+.footer-newsletter .newsletter__icon {
+  position: absolute;
+  top: 44%;
+  transform: translateX(-200%);
+}
+
 
   /* modal window */
 
@@ -609,12 +653,14 @@ li.icon-border:not(:last-child) {
   height: 100%;
   position: fixed;
   top: 0;
+  left: 0;
   background-color: rgba(0, 0, 0, 0.2);
   display: flex;
   justify-content: center;
   align-items: center;
   /* display: none; */
   /* visibility: hidden; */
+  opacity: 1;
   transition: visibility 250ms cubic-bezier(0.4, 0, 0.2, 1), opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
   
 
@@ -628,9 +674,11 @@ li.icon-border:not(:last-child) {
 
 
 .modal-content {
-  width: 528px;
-  height: 581px;
+  min-width: 528px;
+  min-height: 581px;
   background-color: rgba(255, 255, 255, 1);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+  0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   position: relative;
   opacity: 1;
@@ -638,6 +686,7 @@ li.icon-border:not(:last-child) {
   display: flex;
   justify-content: center;
   text-align: center;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 
@@ -671,14 +720,10 @@ label {
   flex-direction: column;
 }
 
-.name {
-  
-}
 
-
-.name, 
-.number,
-.email {
+.request-form__name, 
+.request-form__phone,
+.request-form__email {
   width: 448px;
   height: 40px;
   margin: 0;
@@ -686,22 +731,34 @@ label {
   border-radius: 4px;
 }
 
+.request-form__name:hover,
+.request-form__phone:hover,
+.request-form__email:hover,
+.request-form__text-box:hover,
+.request-form__name:focus,
+.request-form__phone:focus, 
+.request-form__email:focus,
+.request-form__text-box:focus {
+  border-color: #188CE8;
+  cursor: pointer;
+}
+
+
 textarea {
   height: 120px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   font-size: 14px;
-  color: rgba(117, 117, 117, 0.5);
   padding: 12px 16px;
 }
 
-.label-title {
-  padding-top: 10px;
-  padding-bottom: 4px;
+.request-form__label {
+  padding: 10px 0 4px;
   color: #757575;
   text-align: left;
   font-size: 12px;
   font-weight: 400;
+  
 }
 
 .form-title {
@@ -709,33 +766,76 @@ textarea {
   font-size: 20px;
 }
 
-.form-button {
+.request-form__button {
   width: 200px;
   height: 50px;
   border-radius: 4px;
   border-style: none;
-  background-color: #188CE8;
+  background-color: #2196f3;
   color: #ffffff;
   font-size: 16px;
   font-weight: 700;
   cursor: pointer;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.terms-and-conditions {
-  position: absolute;
-  margin: 20px;
-}
-
-.checkbox-label {
-  width: 100%;
-  margin: 20px;
-  color: #757575;
-  text-align: center;
-}
-
-.form-button:hover,
-.form-button:focus {
-  background-color: #188CE8;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+
+.request-form__checkbox-label {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  color: #757575;
+}
+
+
+.request-form__button:hover,
+.request-form__button:focus {
+  background-color: #188ce8;
+}
+
+/* test code */
+
+
+label > .request-form__icon {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(50%);
+  color: rgba(33, 33, 33, 1);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+}
+
+.request-form__label:hover {
+  fill: rgba(33, 150, 243, 1);
+
+}
+
+label > input {
+  padding-left: calc(1em + 10px + 8px); /* icon width + icon padding-left + desired separation*/
+  height: 2em;
+}
+
+/*
+  SVG SpriteSheet
+*/
+
+.spritesheet {
+  display: none;
+}
+
+.request-form__icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: currentColor;
+  
+}
+
+.request-form__title {
+  padding-bottom: 4px;
+}
+
+

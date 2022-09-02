@@ -608,11 +608,20 @@ li.icon-border:not(:last-child) {
   border: 1px solid rgba(255, 255, 255, 0.3);
   background-color: rgba(47, 48, 58, 1);
   padding: 16px;
-  color: #ffffff;
+  
+}
 
+.email-input:hover,
+.email-input:focus {
+  background-color: #ffffff;
+  outline: none;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .email-subscription-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 200px;
   height: 50px;
   margin-left: 12px;
@@ -638,11 +647,12 @@ li.icon-border:not(:last-child) {
 }
 
 .footer-newsletter .newsletter__icon {
-  position: absolute;
-  top: 44%;
-  transform: translateX(-200%);
+  margin-left: 10px;
 }
 
+.newsletter-signup-form {
+  display: flex;
+}
 
   /* modal window */
 
@@ -674,8 +684,7 @@ li.icon-border:not(:last-child) {
 
 
 .modal-content {
-  min-width: 528px;
-  min-height: 581px;
+  padding: 40px;
   background-color: rgba(255, 255, 255, 1);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
   0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -703,7 +712,7 @@ li.icon-border:not(:last-child) {
   border-radius: 100%;
   border: 1px solid rgba(0, 0, 0, 0.1);
   background-color: rgba(255, 255, 255, 1);
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .closing-modal-button:hover, 
@@ -716,19 +725,19 @@ li.icon-border:not(:last-child) {
 
 label {
   position: relative;
-  display: flex;
-  flex-direction: column;
 }
 
 
 .request-form__name, 
 .request-form__phone,
 .request-form__email {
-  width: 448px;
+  width: 100%;
   height: 40px;
   margin: 0;
+  padding: 11px 16px 11px 40px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
+  margin-bottom: 30px;
 }
 
 .request-form__name:hover,
@@ -743,9 +752,13 @@ label {
   cursor: pointer;
 }
 
+.request-form__label-textarea {
+  margin-bottom: 20px;
+}
+
 
 textarea {
-  height: 120px;
+  resize: none;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   font-size: 14px;
@@ -753,17 +766,15 @@ textarea {
 }
 
 .request-form__label {
-  padding: 10px 0 4px;
+  position: relative;
   color: #757575;
   text-align: left;
-  font-size: 12px;
-  font-weight: 400;
-  
 }
 
 .form-title {
   padding: 40px 0 12px;
   font-size: 20px;
+  margin-bottom: 30px;
 }
 
 .request-form__button {
@@ -784,8 +795,8 @@ textarea {
 .request-form__checkbox-label {
   display: flex;
   flex-direction: row;
-  padding: 10px;
   color: #757575;
+  margin-bottom: 20px;
 }
 
 
@@ -799,23 +810,18 @@ textarea {
 
 label > .request-form__icon {
   position: absolute;
-  top: 50%;
+  bottom: 50%;
   left: 12px;
   transform: translateY(50%);
-  color: rgba(33, 33, 33, 1);
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
 }
+
 
 .request-form__label:hover {
   fill: rgba(33, 150, 243, 1);
-
 }
 
-label > input {
-  padding-left: calc(1em + 10px + 8px); /* icon width + icon padding-left + desired separation*/
-  height: 2em;
-}
+
 
 /*
   SVG SpriteSheet
@@ -826,16 +832,14 @@ label > input {
 }
 
 .request-form__icon {
-  display: inline-block;
-  width: 1em;
-  height: 1em;
-  stroke-width: 0;
-  stroke: currentColor;
-  
+
 }
 
 .request-form__title {
-  padding-bottom: 4px;
+  position: absolute;
+  top: -16px;
+  font-size: 12px;
+  font-weight: 400;
 }
 
 

@@ -258,7 +258,6 @@ nav .current:after {
   margin-top: 30px;
   margin-left: 30px;
   position: relative;
-  overflow: hidden;
 }
 
 .project-info-container {
@@ -299,7 +298,7 @@ nav .current:after {
 .project-link {
   display: block;
   cursor: pointer;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .project-link:hover,

@@ -581,13 +581,16 @@
             <span class="request-form__title">Comments</span>
             <textarea class="request-form__text-box" name="text" rows="8" placeholder="Enter the text" id="comment-box"></textarea>
           </label>
-          <label class="request-form__checkbox-label">
-            <input type="checkbox" class="request-form__checkbox" value="accept" required/>
-            <svg class="request-form__icon-checkbox" width="16" height="15">
-              <use href="images/icons.svg#icon-icon-check-1"></use>
+          <label class="agree-check">
+            <input type="checkbox" class="checkmark" name="agreement" value="agree" />
+            <svg class="icon" width="16" height="16">
+               <use href="./images/icons.svg#icon-Vector-5-1"></use>
             </svg>
-            <span class="request-form__terms">I agree with the newsletter and accept the Terms and Conditions</span>
-          </label>
+            <span>
+               I agree to the newsletter and accept the
+               <a href="#" class="terms">Terms and Conditions </a>
+            </span>
+         </label>
           <button type="button" class="request-form__button">Send</button>
         </form>
         <button type="button" class="closing-modal-button" data-modal-close>
